@@ -34,6 +34,6 @@ public class UnoCard {
     }
 
     public String toString() {
-        return this.color + " " + this.value;
+        return this.color + "-" + this.value;
     }
 }
