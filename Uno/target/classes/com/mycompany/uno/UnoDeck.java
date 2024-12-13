@@ -1,3 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.uno;
+
+/**
+ *
+ * @author jacob
+ */
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -29,16 +39,17 @@ public class UnoDeck {
                 this.cards[this.cardsInDeck++] = new UnoCard(UnoCard.Color.Wild, value);
             }
         }
-        this.shuffle();
+        
+        this._shuffle();
     }
 
     public void shuffleDiscards(ArrayList<UnoCard> discards) {
         this.cards = discards.toArray(new UnoCard[discards.size()]);
         this.cardsInDeck = this.cards.length;
-        this.shuffle();
+        this._shuffle();
     }
 
-    private void shuffle() {
+    private void _shuffle() {
         int n = this.cards.length;
         Random rand = new Random();
 

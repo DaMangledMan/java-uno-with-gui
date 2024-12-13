@@ -1,3 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.uno;
+
+/**
+ *
+ * @author jacob
+ */
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,7 +45,7 @@ public class Game {
         }
     }
 
-    public void start(Game game) {
+    public UnoCard start() {
         UnoCard card = deck.drawOne();
         this.validColor = card.getColor();
         this.validValue = card.getValue();
@@ -43,7 +53,7 @@ public class Game {
 
         if (card.getColor() == UnoCard.Color.Wild || 
         card.getValue() == UnoCard.Value.DrawTwo) {
-            start(game);
+            this.start();
         }
 
         if (card.getValue() == UnoCard.Value.Skip) {
@@ -52,10 +62,10 @@ public class Game {
             JOptionPane.showMessageDialog(null, message);
             
             if (this.directionClockwise) {
-                this.currentPlayer += 1 % playerIds.length;
+                this.currentPlayer = (this.currentPlayer + 1) % playerIds.length;
             }
             else {
-                this.currentPlayer -= 1 % playerIds.length;
+                this.currentPlayer = (this.currentPlayer - 1) % playerIds.length;
                 if (this.currentPlayer < 0) {this.currentPlayer += playerIds.length;}
             }
         }
@@ -66,23 +76,17 @@ public class Game {
             JOptionPane.showMessageDialog(null, message);
 
             this.directionClockwise = !this.directionClockwise;
-
-            if (this.directionClockwise) {
-                this.currentPlayer += 1 % playerIds.length;
-            }
-            else {
-                this.currentPlayer -= 1 % playerIds.length;
-                if (this.currentPlayer < 0) {this.currentPlayer += playerIds.length;}
-            }
         }
+        
+        return card;
     }
 
     public UnoCard getLastDiscard() {
         return new UnoCard(this.validColor, this.validValue);
     }
 
-    public ImageIcon getCardImageIcon(UnoCard card) {
-        return new ImageIcon(card.toString() + ".png");
+    public String getCardName(UnoCard card) {
+        return card.toString();
     }
 
     public boolean isGameOver() {
@@ -99,13 +103,13 @@ public class Game {
     }
 
     public String getPreviousPlayerName() {
-        int index = this.currentPlayer;
+        int index;
         if (this.directionClockwise) {
-            this.currentPlayer -= 1 % playerIds.length;
-            if (this.currentPlayer < 0) {this.currentPlayer += playerIds.length;}
+            index = (this.currentPlayer - 1) % playerIds.length;
+            if (index < 0) {index += playerIds.length;}
         }
         else {
-            this.currentPlayer += 1 % playerIds.length;
+            index = (this.currentPlayer + 1) % playerIds.length;
         }
         return this.playerIds[index];
     }
@@ -148,10 +152,10 @@ public class Game {
         getPlayerHand(pid).add(deck.drawOne());
 
         if (this.directionClockwise) {
-            this.currentPlayer += 1 % playerIds.length;
+            this.currentPlayer = (this.currentPlayer + 1) % playerIds.length;
         }
         else {
-            this.currentPlayer -= 1 % playerIds.length;
+            this.currentPlayer = (this.currentPlayer - 1) % playerIds.length;
             if (this.currentPlayer < 0) {this.currentPlayer += playerIds.length;}
         }
     }
@@ -169,18 +173,18 @@ public class Game {
         throws InvalidPlayerTurnException, InvalidCardSubmissionExpception {
         
         checkPlayerTurn(pid);
-
-        ArrayList<UnoCard> playerHand = getPlayerHand(pid);
-
+        
         if (!isValidCardPlay(card)) {
             JLabel message = new JLabel("Invalid Player Move, expected either color: " + this.validColor + " or value: " + this.validValue + ", recieved: " + card.toString());
-            message.setFont(new Font("Arial", Font.BOLD, 48));
+            message.setFont(new Font("Arial", Font.BOLD, 30));
             JOptionPane.showMessageDialog(null, message);
 
             throw new InvalidCardSubmissionExpception(new UnoCard(this.validColor, this.validValue), card);
         }
 
-        playerHand.remove(card);
+        this.playersHands.get(this.currentPlayer).remove(card);
+        
+        
         if (hasEmptyHand(this.getCurrentPlayerName())) {
             JLabel message = new JLabel(this.getCurrentPlayerName() + " has won the game!");
             message.setFont(new Font("Arial", Font.BOLD, 48));
@@ -201,10 +205,10 @@ public class Game {
         }
 
         if (this.directionClockwise) {
-            this.currentPlayer += 1 % playerIds.length;
+            this.currentPlayer = (this.currentPlayer + 1) % playerIds.length;
         }
         else {
-            this.currentPlayer -= 1 % playerIds.length;
+            this.currentPlayer = (this.currentPlayer - 1) % playerIds.length;
             if (this.currentPlayer < 0) {this.currentPlayer += playerIds.length;}
         }
 
@@ -212,10 +216,6 @@ public class Game {
 
         if (card.getColor() == UnoCard.Color.Wild) {
             this.validColor = declaredColor;
-
-            JLabel message = new JLabel("The new color is " + this.validColor + "!");
-            message.setFont(new Font("Arial", Font.BOLD, 48));
-            JOptionPane.showMessageDialog(null, message);
         }
 
         if (card.getValue() == UnoCard.Value.DrawTwo) {
@@ -227,10 +227,10 @@ public class Game {
             JOptionPane.showMessageDialog(null, message);
             
             if (this.directionClockwise) {
-                this.currentPlayer += 1 % playerIds.length;
+                this.currentPlayer = (this.currentPlayer + 1) % playerIds.length;
             }
             else {
-                this.currentPlayer -= 1 % playerIds.length;
+                this.currentPlayer = (this.currentPlayer - 1) % playerIds.length;
                 if (this.currentPlayer < 0) {this.currentPlayer += playerIds.length;}
             }
         }
@@ -243,15 +243,15 @@ public class Game {
             submitDrawCard(pid);
             submitDrawCard(pid);
 
-            JLabel message = new JLabel(pid + " drew four cards, and the new color is " + this.validColor + "!");
+            JLabel message = new JLabel(pid + " drew four cards!");
             message.setFont(new Font("Arial", Font.BOLD, 48));
             JOptionPane.showMessageDialog(null, message);
             
             if (this.directionClockwise) {
-                this.currentPlayer += 1 % playerIds.length;
+                this.currentPlayer = (this.currentPlayer + 1) % playerIds.length;
             }
             else {
-                this.currentPlayer -= 1 % playerIds.length;
+                this.currentPlayer = (this.currentPlayer - 1) % playerIds.length;
                 if (this.currentPlayer < 0) {this.currentPlayer += playerIds.length;}
             }
         }
@@ -262,10 +262,10 @@ public class Game {
             JOptionPane.showMessageDialog(null, message);
             
             if (this.directionClockwise) {
-                this.currentPlayer += 1 % playerIds.length;
+                this.currentPlayer = (this.currentPlayer + 1) % playerIds.length;
             }
             else {
-                this.currentPlayer -= 1 % playerIds.length;
+                this.currentPlayer = (this.currentPlayer - 1) % playerIds.length;
                 if (this.currentPlayer < 0) {this.currentPlayer += playerIds.length;}
             }
         }

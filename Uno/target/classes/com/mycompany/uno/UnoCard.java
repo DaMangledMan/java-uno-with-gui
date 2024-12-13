@@ -1,3 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.uno;
+
+/**
+ *
+ * @author jacob
+ */
 public class UnoCard {
     enum Color {
         Red, Yellow, Blue, Green, Wild;
@@ -34,6 +44,6 @@ public class UnoCard {
     }
 
     public String toString() {
-        return this.color + "-" + this.value;
+        return this.color + " " + this.value;
     }
 }
