@@ -6,6 +6,7 @@ package com.mycompany.uno;
 
 import java.awt.Font;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -232,10 +233,6 @@ public class AddPlayerNames extends javax.swing.JFrame {
     }//GEN-LAST:event_NameInputBoxCaretUpdate
 
     private void DoneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoneBtnActionPerformed
-        this.playerIds.add("jacob");
-        this.playerIds.add("devin");
-        this.playerIds.add("isaiah");
-        this.playerIds.add("alison");
         
         if (this.playerIds.size() <= 1) {
             JLabel message = new JLabel("There must be at least 2 Players");
@@ -243,7 +240,11 @@ public class AddPlayerNames extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, message);
         }
         else {
-            new GameStage(this.playerIds).setVisible(true);
+            GameStage window = new GameStage(this.playerIds);
+            window.setBounds(750,40,800,550);
+            window.setResizable(false);
+            window.setVisible(true);
+            window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             this.dispose();
         }
     }//GEN-LAST:event_DoneBtnActionPerformed

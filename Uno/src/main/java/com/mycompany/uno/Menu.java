@@ -4,6 +4,8 @@
  */
 package com.mycompany.uno;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author jacob
@@ -101,7 +103,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void playBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playBtnActionPerformed
-        new AddPlayerNames().setVisible(true);
+        AddPlayerNames window = new AddPlayerNames();
+        window.setBounds(750,40,500,400);
+        window.setResizable(false);
+        window.setVisible(true);
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_playBtnActionPerformed
 

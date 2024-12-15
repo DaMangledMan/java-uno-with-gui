@@ -4,6 +4,8 @@
  */
 package com.mycompany.uno;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author jacob
@@ -11,6 +13,10 @@ package com.mycompany.uno;
 public class Uno {
     
     public static void main(String[] args) throws Exception {
-        new Menu().setVisible(true);
+        Menu window = new Menu();
+        window.setBounds(750,40,500,400);
+        window.setResizable(false);
+        window.setVisible(true);
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 }

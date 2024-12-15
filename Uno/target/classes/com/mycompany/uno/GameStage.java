@@ -248,8 +248,8 @@ public class GameStage extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(handSlot12, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(handSlot13, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(handSlot14, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                            .addComponent(handSlot14, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -316,7 +316,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(6) != null) {
             int index = 6;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -328,7 +328,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(2) != null) {
             int index = 2;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -358,7 +358,7 @@ public class GameStage extends javax.swing.JFrame {
             System.out.println("entered 'if' statement");
             int index = 0;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -370,7 +370,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(1) != null) {
             int index = 1;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -382,7 +382,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(3) != null) {
             int index = 3;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -394,7 +394,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(4) != null) {
             int index = 4;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -406,7 +406,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(5) != null) {
             int index = 5;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -418,7 +418,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(7) != null) {
             int index = 7;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -430,7 +430,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(8) != null) {
             int index = 8;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -442,7 +442,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(9) != null) {
             int index = 9;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -454,7 +454,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(10) != null) {
             int index = 10;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -466,7 +466,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(11) != null) {
             int index = 11;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -478,7 +478,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(12) != null) {
             int index = 12;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -490,7 +490,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(13) != null) {
             int index = 13;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -502,7 +502,7 @@ public class GameStage extends javax.swing.JFrame {
         if (cardButtons.get(14) != null) {
             int index = 14;
             window = new PopUp(game, game.getPlayerCard(game.getCurrentPlayerName(), index), this);
-            window.setBounds(750,40,400,300);
+            window.setBounds(750,40,500,400);
             window.setResizable(false);
             window.setVisible(true);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

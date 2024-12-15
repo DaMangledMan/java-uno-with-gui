@@ -116,7 +116,7 @@ public class PopUp extends javax.swing.JFrame {
     private void confirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmBtnActionPerformed
         if (this.declaredColor == UnoCard.Color.Wild) {
             PickColorFrame pickColor = new PickColorFrame(this /*, this.latch */);
-            pickColor.setBounds(750,40,400,300);
+            pickColor.setBounds(750,40,500,400);
             pickColor.setResizable(false);
             pickColor.setVisible(true);
             /*
